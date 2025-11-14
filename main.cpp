@@ -32,21 +32,21 @@ int parser(const string IN, char* OUT) {
 
 	if (M == "pus") { // push
 		if (IN == "push ax") {
-			OUT[0] = 32; // 50h
+			OUT[0] = 0x50;
 		} else if (IN == "push cx") {
-			OUT[0] = 33;
+			OUT[0] = 0x51;
 		} else if (IN == "push dx") {
-			OUT[0] = 34;
+			OUT[0] = 0x52;
 		} else if (IN == "push bx") {
-			OUT[0] = 35;
+			OUT[0] = 0x53;
 		} else if (IN == "push sp") {
-			OUT[0] = 36;
+			OUT[0] = 0x54;
 		} else if (IN == "push bp") {
-			OUT[0] = 37;
+			OUT[0] = 0x55;
 		} else if (IN == "push si") {
-			OUT[0] = 38;
+			OUT[0] = 0x56;
 		} else if (IN == "push di") {
-			OUT[0] = 39;
+			OUT[0] = 0x57;
 		} else if (IN == "push cs") {
 			OUT[0] = 0x0E;
 		} else if (IN == "push ds") {
@@ -61,21 +61,21 @@ int parser(const string IN, char* OUT) {
 		return 1;
 	} else if (M == "pop") { // pop
 		if (IN == "pop ax") {
-			OUT[0] = 40; // 58h
+			OUT[0] = 0x58;
 		} else if (IN == "pop cx") {
-			OUT[0] = 41;
+			OUT[0] = 0x59;
 		} else if (IN == "pop dx") {
-			OUT[0] = 42;
+			OUT[0] = 0x5A;
 		} else if (IN == "pop bx") {
-			OUT[0] = 43;
+			OUT[0] = 0x5B;
 		} else if (IN == "pop sp") {
-			OUT[0] = 44;
+			OUT[0] = 0x5C;
 		} else if (IN == "pop bp") {
-			OUT[0] = 45;
+			OUT[0] = 0x5D;
 		} else if (IN == "pop si") {
-			OUT[0] = 46;
+			OUT[0] = 0x5E;
 		} else if (IN == "pop di") {
-			OUT[0] = 47;
+			OUT[0] = 0x5F;
 		} else if (IN == "pop cs") {
 			assert(1); return 0; // INVALID
 		} else if (IN == "pop ds") {
