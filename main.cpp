@@ -56,7 +56,7 @@ int parser(const string IN, char* OUT) {
 		} else if (IN == "push es") {
 			OUT[0] = 0x06;
 		} else {
-			return 0; // error
+			return 0;
 		}
 		return 1;
 	} else if (M == "pop") { // pop
@@ -85,7 +85,49 @@ int parser(const string IN, char* OUT) {
 		} else if (IN == "pop es") {
 			OUT[0] = 0x07;
 		} else {
-			return 0; // error
+			return 0;
+		}
+		return 1;
+	} else if (M == "inc") { // inc
+		if (IN == "inc ax") {
+			OUT[0] = 0x40;
+		} else if (IN == "inc cx") {
+			OUT[0] = 0x41;
+		} else if (IN == "inc dx") {
+			OUT[0] = 0x42;
+		} else if (IN == "inc bx") {
+			OUT[0] = 0x43;
+		} else if (IN == "inc sp") {
+			OUT[0] = 0x44;
+		} else if (IN == "inc bp") {
+			OUT[0] = 0x45;
+		} else if (IN == "inc si") {
+			OUT[0] = 0x46;
+		} else if (IN == "inc di") {
+			OUT[0] = 0x47;
+		} else {
+			return 0;
+		}
+		return 1;
+	} else if (M == "dec") { // dec
+		if (IN == "dec ax") {
+			OUT[0] = 0x48;
+		} else if (IN == "dec cx") {
+			OUT[0] = 0x49;
+		} else if (IN == "dec dx") {
+			OUT[0] = 0x4A;
+		} else if (IN == "dec bx") {
+			OUT[0] = 0x4B;
+		} else if (IN == "dec sp") {
+			OUT[0] = 0x4C;
+		} else if (IN == "dec bp") {
+			OUT[0] = 0x4D;
+		} else if (IN == "dec si") {
+			OUT[0] = 0x4E;
+		} else if (IN == "dec di") {
+			OUT[0] = 0x4F;
+		} else {
+			return 0;
 		}
 		return 1;
 	}
