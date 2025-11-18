@@ -53,15 +53,17 @@ int get_reg_size(string REG) {
 
 char get_reg(string REG) { // xxx reg
 	char reg = 0;
-	if (REG[1] != 'x' and REG[1] != 'l') reg + 4;
+	if (REG[1] == 'h') reg + 4;
 	if (REG[0] == 'a') return reg;
 	if (REG[0] == 'c') return reg+1;
 	if (REG == "di")   return 7;
 	if (REG[0] == 'd') return reg+2;
 	if (REG == "bp")   return 5;
 	if (REG[0] == 'b') return reg+3;
-	if (REG == "si")   return reg+2;
-	return reg;	// sp
+	if (REG == "si")   return 6;
+	if (REG == "sp")   return 4;
+	assert(1);
+	return 0;
 }
 
 
@@ -133,9 +135,9 @@ int tail(const string TAIL, unsigned char OUT[8]) {
 	if ((flag & 15) == 0) { // r, r
 		unsigned char byte2 = 3;
 		byte2 <<= 3;
-		byte2 += get_reg(A);
-		byte2 <<= 3;
 		byte2 += get_reg(B);
+		byte2 <<= 3;
+		byte2 += get_reg(A);
 		OUT[len] = byte2;
 	}
 
