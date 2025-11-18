@@ -159,7 +159,7 @@ int parser(const string IN, unsigned char OUT[8]) {
 	string HEAD = IN.substr(0, pos);
 	string TAIL = IN.substr(pos + 1);
 
-	if (HEAD== "pus") { // push
+	if (HEAD== "push") { // push
 		if (IN == "push ax") {
 			OUT[0] = 0x50;
 		} else if (IN == "push cx") {
