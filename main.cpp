@@ -53,7 +53,7 @@ int get_reg_size(string REG) {
 
 char get_reg(string REG) { // xxx reg
 	char reg = 0;
-	if (REG[1] == 'h') reg + 4;
+	if (REG[1] == 'h') reg = 4;
 	if (REG[0] == 'a') return reg;
 	if (REG[0] == 'c') return reg+1;
 	if (REG == "di")   return 7;
